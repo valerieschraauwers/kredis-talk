@@ -1,0 +1,26 @@
+<div class="card-category mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/lewagon_logo.png')">
+  <h1 class="text-center">Le Wagon Engineers</h1>
+</div>
+
+
+<div class="mt-4">
+  <%= simple_form_for @engineer do |f|%>
+    <%= f.input :gh_nickname, label: false %>
+    <%= f.submit class: "btn btn-danger"%>
+  <% end %>
+</div>
+
+<div class="cards">
+  <% @engineers.each do |engineer| %>
+    <div class="card-trip">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= engineer.github_info["name"] %></h2>
+          <p><%= engineer.github_info["bio"].blank? ? "..does not have a bio yet.." : engineer.github_info["bio"] %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= engineer.github_info["public_repos"] %></h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/<%= engineer.gh_nickname %>" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <% end %>
+</div>
