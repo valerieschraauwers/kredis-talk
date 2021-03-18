@@ -8,7 +8,7 @@ class EngineersController < ApplicationController
   def create
     @engineer = Engineer.new(engineer_params)
     if @engineer.save
-      redirect_to root_path
+      redirect_to root_path(anchor: "engineer-#{@engineer.id}")
     else
       render :index
     end
