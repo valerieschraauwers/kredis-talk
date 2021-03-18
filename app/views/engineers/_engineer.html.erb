@@ -1,0 +1,11 @@
+<div class="card-trip" id="engineer-<%= engineer.id %>">
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= engineer.github_info["name"] || engineer.gh_nickname %></h2>
+      <p><%= engineer.github_info["bio"] || "..does not have a bio yet.." %></p>
+      <p>fetched on: <%= engineer.github_info["timestamp"] %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= engineer.github_info["public_repos"] %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/<%= engineer.gh_nickname %>" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
